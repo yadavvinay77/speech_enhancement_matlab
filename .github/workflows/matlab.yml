@@ -1,0 +1,21 @@
+name: MATLAB CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup MATLAB
+      uses: matlab-actions/setup-matlab@v1
+
+    - name: Run Tests
+      run: matlab -batch "run_tests"
