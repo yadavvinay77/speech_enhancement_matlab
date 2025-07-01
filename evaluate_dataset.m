@@ -1,5 +1,9 @@
 function evaluate_dataset()
     clear; clc;
+   
+    % Add method and utils folders to path for function visibility
+    addpath(genpath(fullfile(pwd, 'enhancement_methods')));
+    addpath(genpath(fullfile(pwd, 'utils')));
 
     % Setup paths
     clean_dir = fullfile('data', 'clean_speech');
